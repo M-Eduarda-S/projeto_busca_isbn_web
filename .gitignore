@@ -1,0 +1,10 @@
+# Arquivos compilados
+build/
+*.class
+
+# Configurações locais do NetBeans
+nbproject/private/
+
+# Configurações do sistema operacional
+.DS_Store
+Thumbs.db
