@@ -53,7 +53,8 @@ public class Main {
         //instancia e usa objeto que captura código-fonte de páginas Web
         CapturaRecursosWeb crw = new CapturaRecursosWeb();
 
-        crw.getListaRecursos().add("https://en.wikipedia.org/wiki/ISBN");
+        crw.getListaRecursos().add("https://www.univali.br/"); // nesse site funciona a busca 
+        // crw.getListaRecursos().add("https://en.wikipedia.org/wiki/ISBN");
         //crw.getListaRecursos().add("https://en.wikipedia.org/wiki/List_of_ISBN_registration_groups");
         //crw.getListaRecursos().add("https://search.scielo.org/?q=%28isbn%29&lang=pt&count=50&from=0&output=site&sort=&format=summary&fb=&page=1&filter%5Bin%5D%5B%5D=scl&filter%5Bla%5D%5B%5D=pt");
 
