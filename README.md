@@ -70,16 +70,42 @@ O programa percorre o código HTML caractere por caractere e utiliza o AFD para 
 
 ## Autômato Finito Determinístico
 
-O código-base utilizava um AFD para reconhecer números de dois dígitos.
+Neste trabalho, o autômato foi adaptado para reconhecer uma estrutura específica do ISBN-13.
 
-Neste trabalho, o autômato foi adaptado para reconhecer a estrutura definida para o ISBN-13.
+O ISBN-13 possui como prefixo os valores `978` ou `979`. Por isso, o autômato permite apenas essas duas possibilidades no início da sequência.
 
-De forma simplificada, os estados representam as posições dos caracteres que precisam ser lidos:
+A estrutura utilizada neste trabalho é: `978/979-XX-XXXXX-XX-X`
 
-q0 → q1 → q2 → ... → q17 <br><br> 
-● `q0`: estado inicial; <br> 
-● `q1 até q16`: leitura dos primeiros caracteres; <br> 
-● `q17`: estado final, após a leitura dos 13 caracteres esperados. 
+onde:
+- `978/979`: prefixo do ISBN-13;
+- `XX`: grupo de registro;
+- `XXXXX`: identificador da editora;
+- `XX`: elemento de publicação;
+- `X`: dígito de verificação.
+
+Os campos representados por `X` e `XX` utilizam dígitos de `0` a `9`.
+
+### Limitação da estrutura utilizada
+
+A estrutura representada pelo autômato é uma **simplificação para fins didáticos** e foi baseada no formato do ISBN utilizado como exemplo no trabalho (`978-85-359-0270-0`).
+
+Apesar de o ISBN-13 possuir regras mais gerais para a quantidade de dígitos de cada componente, essas diferentes possibilidades não foram implementadas neste AFD. Dessa forma, o autômato reconhece somente o formato:
+
+`978/979-XX-XXXXX-XX-X`
+
+e não todas as possíveis combinações de tamanhos dos componentes de um ISBN-13.
+
+O objetivo do trabalho é demonstrar a aplicação de um Autômato Finito Determinístico na busca de um padrão em páginas Web, e **não implementar todas as regras de formação e validação do ISBN-13**.
+
+De forma simplificada, os estados representam as posições dos símbolos que precisam ser lidos:
+
+`q0 → q1 → q2 → ... → q17`
+
+- `q0`: estado inicial;
+- `q1` e `q2`: leitura do prefixo `97`;
+- `q3`: leitura do terceiro dígito do prefixo (`8` ou `9`);
+- `q4` até `q16`: leitura dos demais dígitos e hífens;
+- `q17`: estado final, após a leitura de toda a sequência no formato definido.
 
 As transições são determinadas pela tabela de transição do AFD.
 ---
@@ -100,4 +126,5 @@ README.md                       # explicação do projeto
 ### Observação
 - Projeto com **foco didático** para compreensão de Autômato Finito Determinístico (AFD);
 - Foi desenvolvido a partir do código-base `BuscaPadraoWeb` fornecido pelo professor e adaptado para o trabalho com ISBN-13;
+- O AFD implementado reconhece uma **estrutura específica** de ISBN-13 (`978/979-XX-XXXXX-XX-X`), não abrangendo todas as possíveis estruturas de distribuição dos componentes do ISBN-13;
 - A validação do ISBN-13, como o cálculo e a verificação do dígito de controle, **não** faz parte deste trabalho, pois não foi solicitada na atividade.
