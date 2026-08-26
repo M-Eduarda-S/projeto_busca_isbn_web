@@ -29,13 +29,13 @@ O projeto pode ser executado localmente em uma IDE, como o Apache NetBeans, Inte
 ### Como executar
 O projeto pode ser executado de diferentes formas. <br> 
 
-#### Utilizando uma IDE
+#### → Utilizando uma IDE
 
 O projeto pode ser aberto em uma IDE com suporte a Java, como o Apache NetBeans, IntelliJ IDEA ou Eclipse.
 
 Após abrir o projeto, execute a classe `Main`. <br> 
 
-#### Utilizando um ambiente online
+#### → Utilizando um ambiente online
 
 Também é possível utilizar um **ambiente online** que ofereça suporte à execução de projetos Java. Nesse caso, os arquivos do projeto devem ser adicionados ao ambiente e a classe `Main` deve ser executada.
 
@@ -89,13 +89,9 @@ Os campos representados por `X` e `XX` utilizam dígitos de `0` a `9`.
 
 A estrutura representada pelo autômato é uma **simplificação para fins didáticos** e foi baseada no formato do ISBN utilizado como exemplo no trabalho (`978-85-359-0270-0`).
 
-Apesar de o ISBN-13 possuir regras mais gerais para a quantidade de dígitos de cada componente, essas diferentes possibilidades não foram implementadas neste AFD. Dessa forma, o autômato reconhece somente o formato:
+Apesar de o ISBN-13 possuir regras mais gerais para a quantidade de dígitos de cada componente, essas diferentes possibilidades **não foram implementadas neste AFD**. Dessa forma, o autômato reconhece somente o formato: `978/979-XX-XXXXX-XX-X` e não todas as possíveis combinações de tamanhos dos componentes de um ISBN-13.
 
-`978/979-XX-XXXXX-XX-X`
-
-e não todas as possíveis combinações de tamanhos dos componentes de um ISBN-13.
-
-O objetivo do trabalho é demonstrar a aplicação de um Autômato Finito Determinístico na busca de um padrão em páginas Web, e **não implementar todas as regras de formação e validação do ISBN-13**.
+O objetivo do trabalho é demonstrar a aplicação de um Autômato Finito Determinístico na busca de um padrão em páginas Web, e **não** implementar todas as regras de formação e validação do ISBN-13.
 
 De forma simplificada, os estados representam as posições dos símbolos que precisam ser lidos:
 
@@ -108,6 +104,7 @@ De forma simplificada, os estados representam as posições dos símbolos que pr
 - `q17`: estado final, após a leitura de toda a sequência no formato definido.
 
 As transições são determinadas pela tabela de transição do AFD.
+
 ---
 
 ## Estrutura:
