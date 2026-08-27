@@ -49,53 +49,62 @@
             font-size: 1.1rem;
         }
 
-        .pattern-badge {
-            display: inline-block;
-            background-color: #eff6ff;
-            color: var(--primary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-family: monospace;
-            font-weight: bold;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            border: 1px solid #bfdbfe;
-        }
-
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1.8rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        .isbn-list {
-            list-style-type: none;
-            padding: 0;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        .isbn-list li {
+        th, td {
             padding: 0.8rem 1rem;
             border-bottom: 1px solid var(--border);
-            font-family: monospace;
-            font-size: 1.2rem;
-            color: #334155;
-            text-align: center;
-            letter-spacing: 1px;
+            text-align: left;
         }
 
-        .isbn-list li:last-child {
+        th {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:last-child td {
             border-bottom: none;
         }
 
-        .isbn-list li:hover {
-            background-color: #f8fafc;
+        .isbn-code {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #334155;
         }
 
-        .isbn-code {
+        .status {
             font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .status.sim {
+            color: #16a34a; /* Verde */
+        }
+
+        .status.nao {
+            color: #dc2626; /* Vermelho */
+        }
+
+        .footer-count {
+            text-align: center;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -104,31 +113,42 @@
 <div class="container">
     <header>
         <h1>Repositório de Códigos ISBN-13</h1>
-        <p>Trabalho de Linguagens Formais e Autômatos</p>
-        <div class="pattern-badge">Padrão do AFD: 978-XX-XXXXX-XX-X ou 979-XX-XXXXX-XX-X</div>
+        <p>Padrão do AFD: 978-XX-XXXXX-XX-X ou 979-XX-XXXXX-XX-X</p>
     </header>
 
     <div class="card">
-        <ul class="isbn-list">
-            <li><span class="isbn-code">978-8-35902-77-8</span></li>
-            <li><span class="isbn-code">979-10-90636-07-1</span></li>
-            <li><span class="isbn-code">978-85-35902-77-</span></li>
-            <li><span class="isbn-code">978-65-86695-15-5</span></li>
-            <li><span class="isbn-code">978-A5-35902-77-8</span></li>
-            <li><span class="isbn-code">978-00-00000-00-0</span></li>
-            <li><span class="isbn-code">123-45-67890-12-3</span></li>
-            <li><span class="isbn-code">978-85-35902-77-8</span></li>
-            <li><span class="isbn-code">979-10.90636.07.1</span></li>
-            <li><span class="isbn-code">979-12-34567-89-0</span></li>
-            <li><span class="isbn-code">978-85-3590-77-8</span></li>
-            <li><span class="isbn-code">977-85-35902-77-8</span></li>
-            <li><span class="isbn-code">9788535902778</span></li>
-            <li><span class="isbn-code">978-85-35902--8</span></li>
-            <li><span class="isbn-code">978-01-23456-78-9</span></li>
-            <li><span class="isbn-code">978-85-35902-77-89</span></li>
-            <li><span class="isbn-code">979-10-90636-0-1</span></li>
-            <li><span class="isbn-code">978-99-99999-99-9</span></li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Válido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="isbn-code">978-8-35902-77-8</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">979-10-90636-07-1</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">978-85-35902-77-</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-65-86695-15-5</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">978-A5-35902-77-8</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-00-00000-00-0</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">123-45-67890-12-3</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-85-35902-77-8</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">979-10.90636.07.1</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">979-12-34567-89-0</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">978-85-3590-77-8</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">977-85-35902-77-8</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">9788535902778</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-85-35902--8</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-01-23456-78-9</span></td><td><span class="status sim">Sim</span></td></tr>
+                <tr><td><span class="isbn-code">978-85-35902-77-89</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">979-10-90636-0-1</span></td><td><span class="status nao">Não</span></td></tr>
+                <tr><td><span class="isbn-code">978-99-99999-99-9</span></td><td><span class="status sim">Sim</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="footer-count">
+        Quantidade de códigos válidos: 7
     </div>
 </div>
 
