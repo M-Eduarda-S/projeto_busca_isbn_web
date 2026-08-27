@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositório de Códigos ISBN-13 | LFA</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .pattern-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            border: 1px solid #bfdbfe;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .isbn-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .isbn-list li {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: #334155;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .isbn-list li:last-child {
+            border-bottom: none;
+        }
+
+        .isbn-list li:hover {
+            background-color: #f8fafc;
+        }
+
+        .isbn-code {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Repositório de Códigos ISBN-13</h1>
+        <p>Trabalho de Linguagens Formais e Autômatos</p>
+        <div class="pattern-badge">Padrão do AFD: 978-XX-XXXXX-XX-X ou 979-XX-XXXXX-XX-X</div>
+    </header>
+
+    <div class="card">
+        <ul class="isbn-list">
+            <li><span class="isbn-code">978-8-35902-77-8</span></li>
+            <li><span class="isbn-code">979-10-90636-07-1</span></li>
+            <li><span class="isbn-code">978-85-35902-77-</span></li>
+            <li><span class="isbn-code">978-65-86695-15-5</span></li>
+            <li><span class="isbn-code">978-A5-35902-77-8</span></li>
+            <li><span class="isbn-code">978-00-00000-00-0</span></li>
+            <li><span class="isbn-code">123-45-67890-12-3</span></li>
+            <li><span class="isbn-code">978-85-35902-77-8</span></li>
+            <li><span class="isbn-code">979-10.90636.07.1</span></li>
+            <li><span class="isbn-code">979-12-34567-89-0</span></li>
+            <li><span class="isbn-code">978-85-3590-77-8</span></li>
+            <li><span class="isbn-code">977-85-35902-77-8</span></li>
+            <li><span class="isbn-code">9788535902778</span></li>
+            <li><span class="isbn-code">978-85-35902--8</span></li>
+            <li><span class="isbn-code">978-01-23456-78-9</span></li>
+            <li><span class="isbn-code">978-85-35902-77-89</span></li>
+            <li><span class="isbn-code">979-10-90636-0-1</span></li>
+            <li><span class="isbn-code">978-99-99999-99-9</span></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
