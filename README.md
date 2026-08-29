@@ -117,6 +117,7 @@ src/
   │
   └── CapturaRecursosWeb.java   # realiza a captura do conteúdo HTML das páginas Web
 README.md                       # explicação do projeto
+index.html                      # página criada para testar o reconhecimento da estrutura do ISBN-13
 .gitignore
 ```
 
